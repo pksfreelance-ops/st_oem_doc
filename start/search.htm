@@ -1,0 +1,278 @@
+﻿<html>
+<head>
+<title>CIC </title>
+<meta charset="UTF-8">
+
+<!--
+
+CIC-Versionsbezeichnung ca. in Zeile 218 und folgende
+
+
+Vorgehen zur Übernahme von Texten in fremder Zeichensetzung, z.B. russisch in kyrillischer Schrift:
+
+1. Die Vorlage kann als Word-Dokument zur Verfügung stehen
+2. HTML-Datei per Datei/Konvertierung auf unicode/..(unicode-Bearbeitung) umstellen
+3. fremdsprachliche Textstrings mit copy&paste übernehmen
+4. Zeichensatz-Metatag <meta charset="UTF-8"> im Header einfügen
+
+Editieren dieser Datei:
+Wenn folgende deutsche Umlaute und kyrillische Zeichen nicht richtig dargestellt werden, 
+muss ggf. eine Umwandlung "Datei -> konvertieren -> UTF8 in Unicode"
+durchgeführt werden:  
+Deutsche große Umlaute: Ä Ö Ü
+kyrillisch: Поиск документов
+ -->
+
+<link REL="STYLESHEET" TYPE="text/css" HREF="style.css" />
+<link rel="stylesheet" type="text/css" href="tabcontent.css" />
+<script type="text/javascript" src="tabcontent.js">
+
+/***********************************************
+* Tab Content script- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<link REL="STYLESHEET" TYPE="text/css" HREF="style.css" />
+<script language="JavaScript1.2" src="search.js"></script>
+<script language="JavaScript1.2" src="dyn/keywordAmount.js"></script>
+<script language="javascript1.2">
+
+var numRes="10";
+var docArray = new Array() ;
+var objArray = new Array() ;
+var filenum  = new Array() ;
+var sanduhr  = new Image();
+sanduhr.src  = "images/sanduhr.gif";
+var blank    = new Image();
+blank.src    = "images/blank.gif";
+var blankimg = new Image();
+layertab     = new Array();
+var bild     = new Array();
+var anz      = 0;
+var formsarr = new Array();
+var actlayer;
+var actbildidx;
+top.languageAbbr=top.languages[2];
+
+
+</script>
+</head>
+<body bgcolor="#C0C0C0" onLoad="initPage()" name="searchBody">
+
+<ul id="maintab" class="shadetabs">
+<li id="searchTab" ><a href="#" rel="tcontent1"><span id="cicSearchSearch"></span></a></li>
+<li><a href="#" id="metaDatesId" rel="tcontent2"><span id="cicSearchAttr"></span></a></li>
+<li class="selected"><a href="#" id="infoId" rel="tcontent3"><span id="cicSearchInfo"></span></a></li>
+</ul>
+<div class="tabcontentstyle" >
+
+<div id="tcontent1" class="tabcontent" style="position:absolute;left:0px;top:30px;width:100%;">
+
+<form name="searchPdm" >
+		
+<div class="absDiv" style="top:10px; left:10px;">
+	
+<span class="titles" ><span id="cicSearchDocs"></span></span>
+<table cellpadding="0" cellspacing="0" border="0" width="420">
+<tr><td><span id="cicSearchIn"></span>:</td><td colspan=3 >
+		<span id="cicSearchVol"></span>
+		<input type=checkbox name="searchscope" value="dir" checked>		
+		&nbsp;&nbsp;&nbsp;<span id="cicSearchDoc"></span>
+		<input type=checkbox name="searchscope2" value="doc" checked>
+		</td></tr>
+
+<tr><td width="100"><span id="cicSearchTitle"></span></td><td colspan="3">
+  <input type="text" title="" class=normal name="title" value="" style="width:300;" />
+</td></tr>
+
+<tr><td width="100"><span id="cicSearchUNID"></span></td><td>
+	<input title="" class=normal name="uni" type="text"  value= "" size=30>
+	<button class="buttonClass" type="button" id="uniButton" onClick="LoadSrc('uni',  200, 229, 200, 15);" style="display:none;">
+	<img src="images/list.gif" border="0"></button>
+</td></tr>
+
+<tr><td width="100"><span id="cicSearchUAS"></span></td><td colspan="3">
+	<input title="" class="normal" name="dcc" value= "" type="text" size=30>
+	<button class="buttonClass" type="button" id="dccButton" onClick="LoadSrc('dcc', 330, 154, 200, 25);">
+	<img src="images/list.gif" border="0"></button>
+</td></tr>
+
+<tr><td width="100"><span id="cicSearchKKS"></span></td><td colspan="3">
+	<input title="" class=normal name="kks" value= "" type="text" size=30>
+	<button class="buttonClass" type="button" id="kksButton" onClick="LoadSrc('kks', 180, 129, 200, 15);" >
+	<img src="images/list.gif" border="0"></button>
+</td></tr>
+
+</table>
+
+
+<div id="custMode" >
+<table cellpadding="0" cellspacing="0" border="0" width="420">
+
+<tr><td width="100"><span id="cicSearchCNS1"></span></td><td>
+	<input title="" class=normal name="osn" type="text" value= "" size=30>
+	<button class="buttonClass" id="osnButton" onClick="LoadSrc('osn', 330, 179, 200, 25);">
+	<img src="images/list.gif" border="0"></button>
+</td></tr>
+
+
+<tr><td><span id="cicSearchCNS2"></span></td><td>
+	<input title="" class=normal name="os1" value= "" type="text" size=30>
+	<button class="buttonClass" id="os1Button" onClick="LoadSrc('os1',  260, 154, 200, 25);">
+	<img src="images/list.gif" border="0"></button>
+</td>
+</tr>
+
+
+<tr><td><span id="cicSearchReg"></span></td><td>
+	<input title="" class="normal" name="reg"  value= "" type="text" size=30>
+	<button class="buttonClass" id="regButton" onClick="LoadSrc('reg',  130, 154, 200, 3);">
+	<img src="images/list.gif" border="0"></button>
+</td>
+</tr>
+
+
+<tr><td><span id="cicSearchSeqno"></span></td><td>
+	<input title="" class=normal name="seqno"  value= "" type="text" size=30>
+	<button class="buttonClass" id="seqnoButton" onClick="LoadSrc('seqno',  130, 154, 200, 3);">
+	<img src="images/list.gif" border="0"></button>
+</td>
+</tr>
+
+<tr><td width="100"><span id="cicSearchRev"></span></td><td width="200">
+	<input title="" class="normal"  value= "" name="rev" type="text" size=2>
+	<button class="buttonClass" type="button" id="revButton" onClick="LoadSrc('rev',  50, 229, 200, 4);">
+	<img src="images/list.gif" border="0"></button>
+	&nbsp;&nbsp;<span id="cicSearchDate"></span>
+	<input title="" class="normal"  value= "" name="dat" type="text" size=10>
+	<button class="buttonClass" type="button" id="datButton" onClick="LoadSrc('dat',  130, 229, 200, 4);">
+	<img src="images/list.gif" border="0"></button>
+	</td><td><span id="cicSearchStat"></span></td><td>
+	<input title="" class="normal"  value= "" name="val" type="text" size=4>
+	<button class="buttonClass" type="button" id="valButton" onClick="LoadSrc('val',  40, 229, 200, 4);">
+	<img src="images/list.gif" border="0"></button>
+</td>
+</tr>
+
+<tr><td width="100"><span id="cicSearchDocNo"></span></td><td colspan="3">
+	<input title="" class=normal  value= "" name="dno" type="text" size=30>
+	<button class="buttonClass"  type="button" id="dnoButton" onClick="LoadSrc('dno',  290 ,254, 200, 10);">
+	<img src="images/list.gif" border="0"></button>
+</td></tr>
+
+<tr><td width="100"><span id="cicSearchVolId"></span></td><td colspan="3">
+	<input title="" class=normal  value= "" name="dvi" type="text" size=30>
+	<button class="buttonClass"  type="button" id="dviButton" onClick="LoadSrc('dvi',  290, 304, 200, 10);">
+	<img src="images/list.gif" border="0"></button>
+</td></tr>
+
+<tr><td width="100"><span id="cicSearchCustCode"></span></td><td colspan="3">
+	<input title="" class=normal  value= "" name="cco" type="text" size=30>
+	<button class="buttonClass" type="button" id="ccoButton" onClick="LoadSrc('cco',  190, 279, 200, 20);">
+	<img src="images/list.gif" border="0"></button>
+</td></tr>
+
+<tr><td><span id="cicSearchODrawing"></span></td><td colspan="3">
+	<input title="" class=normal name="odraw"  value= "" type="text" size=30>
+	<button class="buttonClass" type="button" id="odrawButton" onClick="LoadSrc('odraw',  190, 279, 200, 20);">
+	<img src="images/list.gif" border="0"></button>
+</td></tr>
+
+<tr><td width="100"><span id="cicSearchComp"></span></td><td colspan="3">
+	<input title="" class=normal  value= "" name="com" type="text" size=30>
+	<button class="buttonClass" type="button" id="comButton" onClick="LoadSrc('com',  330, 329, 200, 20);">
+	<img src="images/list.gif" border="0"></button>
+</td></tr>
+
+
+<tr><td width="100"><span id="cicSearchVar"></span></td><td colspan="3">
+	<input title="" class=normal  value= "" name="lgw" type="text" size=4>
+	<button class="buttonClass" id="lgwButton" onClick="LoadSrc('lgw',  30, 304, 200, 8);">
+	<img src="images/list.gif" border="0"></button>
+</td></tr>
+
+<tr><td colspan="99" style="font-size:10px;"><span id="nvaHint" style="display:inline;">
+( <span id="cicSearchNvaHint"></span> )</span></td></tr>
+</table>
+</div>
+
+	<table border="0" width="100%">
+	<tr><td height="10"></td></tr>
+	<tr><td><input class="normal" type="button" value="Press Button to search"  id="cicSearchButtonSearch" style="width:150px;font-size:11px;" onclick="top.doc_main.searchKeywords('',this.form.title.value.toLowerCase(),this.form.kks.value,this.form.dcc.value,this.form.osn.value,this.form.os1.value,this.form.uni.value,this.form.reg.value,this.form.seqno.value,this.form.rev.value,this.form.dat.value,this.form.val.value,this.form.dno.value,this.form.dvi.value,this.form.cco.value,this.form.odraw.value,this.form.lgw.value,this.form.com.value,numRes,this.form.searchscope.checked,this.form.searchscope2.checked);"></td>
+	<td>    <input class="normal" type="reset"  value="Reset"                 id="cicSearchButtonReset" onclick="document.body.style.cursor='auto';location.reload();"></td>
+	<td>    <input class="normal" type="button" value="Help"                    id="cicSearchButtonHelp" onClick="parent.helpwin = parent.open('help.htm','helpwin')"></td>
+	<td style="vertical-align:middle;"> - <span id="cicSearchResPP" style="font-size:10px;" ></span>:<input type="text" size="2" style="width:30px;" name="numDisp" value="10" onChange="cambia(this.value)">
+	</td></tr></table>
+
+<textarea name="xxx" style="display:none;"></textarea>
+</div>
+</form>
+
+</div>
+<div id="tcontent2" class="tabcontent"><span id="cicSearchMetaHelp"></span><br></div>
+<div id="tcontent3" class="tabcontent">
+<img src="images/sie_logo_petrol_rgb.png" border="0" align="right" valign="middle" />
+<span style="font-weight:bold;color:red;font-size:18pt;">CIC </span><span style="font-size:12pt;font-weight:bold;">Product Info</span>
+<table border="0">
+<tr>
+<td width="100">Product</td><td><span class="cicClass">C</span>ustomer <span class="cicClass">I</span>nformation <span class="cicClass">C</span>enter</td></tr>
+<tr><td>Version</td><td>5.5</td></tr>
+<tr><td>Date</td><td>2009-08-25</td></tr>
+<tr><td valign="top">Actual Browser: </td><td>
+<script>
+var nVer = navigator.appVersion;
+var nAgt = navigator.userAgent;
+var browserName  = navigator.appName;
+var nameOffset,verOffset,ix;
+// In MSIE, the true version is after "MSIE" in userAgent
+if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+ browserName = "Microsoft Internet Explorer";
+}
+// In Chrome, the true version is after "Chrome" 
+else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+ browserName = "Google Chrome";
+}
+// In Firefox, the true version is after "Firefox" 
+else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+ browserName = "Mozilla Firefox";
+}
+// In most other browsers, "name/version" is at the end of userAgent 
+else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < (verOffset=nAgt.lastIndexOf('/')) ) 
+{
+ browserName = nAgt.substring(nameOffset,verOffset);
+
+ if (browserName.toLowerCase()==browserName.toUpperCase()) {
+  browserName = navigator.appName;
+ }
+}
+<!-- browserVersion = navigator.appVersion.match(/MSIE.*?;/); document.write(navigator.appName+" "+browserVersion); -->
+document.write(browserName);
+</script></td></tr>
+<tr><td>JavaScript enabled: </td><td  id="jsFlag" valign="top">
+<span style="font-weight:bold;color:red;">no, but required !!</span>
+</td></tr>
+<tr><td>
+Language : </td><td>
+<select id="langSelect" size="1" style="display:none;" onchange="switchLanguage(options[selectedIndex].value);">
+</select>
+</td></tr>
+ 
+</table>
+
+<div class="pgFooter" id="pgAddress" style="display:none;">
+This content will be dynamically replaced by content of pgAddressFile.txt
+</div>
+
+</div>
+
+</div>     <!--  end tabcontentstyle -->
+<script type="text/javascript">
+//Start Tab Content script for UL with id="maintab" Separate multiple ids each with a comma.
+initializetabcontent("maintab")
+</script>
+
+</body>
+</html>

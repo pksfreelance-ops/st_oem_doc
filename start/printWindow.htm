@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet"  media="all" href="searchStyle.css" />
+<link rel="stylesheet"  media="print" href="searchStylePrint.css" />
+<script>
+var nuovoLayer="";
+function printPage(){
+window.print();
+}
+function reloadPage() {
+	self.close();
+}
+function changePage(aa) {
+	opener.changePage(aa);
+	self.close();
+}
+</script>
+</head>
+<body onload="document.all.printContent.innerHTML=opener.nuovoLayer;">
+<div id="printContent">leer
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.firstLetter {
+	font-size:18px;
+	font-family:arial;
+	font-weight:bold;
+	color:black}
+.secondLetter {
+	color:black;
+	font-size:12px;
+	font-family:arial;
+	}
+
+.jswarning {
+	font-size:24px;
+	font-weight:bold;
+	margin-bottom:300px;
+	color:red
+	}
+body {font-family:arial;color:black;}	
+td, th { padding:3px;}
+
+.tablerows {font-size:10px;color:black;width:100%; }
+
+.pageListClass 		  {  font-size: 12px;}
+.pageListLinkClass 	  {  text-decoration:none;color:gray}
+.pageListSelLinkClass  {  text-decoration:none;color:red;font-weight:bold;font-size:16px;}
+.prevnextLinkClass     {  text-decoration:none;font-weight:bold;color:black; }
+.printTitle	{display:none; }

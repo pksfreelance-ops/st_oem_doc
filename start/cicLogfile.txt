@@ -1,0 +1,5 @@
+***** Start CIC at Thu Sep 17 16:41:16 2015 *****
+***** 903 docid's finished at Thu Sep 17 16:41:16 2015 *****
+***** bom finished at Thu Sep 17 16:41:16 2015 *****
+***** leaf finished at Thu Sep 17 16:41:16 2015 *****
+ ***** XMLnew finished at Thu Sep 17 16:41:16 2015 
